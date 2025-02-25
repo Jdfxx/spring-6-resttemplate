@@ -8,7 +8,6 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -24,7 +23,6 @@ public class BeerClientImpl implements BeerClient {
     public static final String BEER_POST_URL = "/api/v1/beer";
     public static final String GET_BEER_BY_ID_URL = "/api/v1/beer/{id}";
     private final RestTemplateBuilder restTemplateBuilder;
-    private final RestClient.Builder builder;
 
     @Override
     public Page<BeerDTO> listBeers(String beerName, BeerStyle beerStyle, Boolean showInventory, Integer page, Integer size) {
